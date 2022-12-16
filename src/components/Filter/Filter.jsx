@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import css from './Filter.module.css';
 export class Filter extends Component {
   state = {
     filter: '',
@@ -10,11 +10,15 @@ export class Filter extends Component {
   };
   render() {
     return (
-      <input
-        type="text"
-        value={this.state.filter}
-        onChange={this.handleInputChange}
-      />
+      <div className={css.container}>
+        <p>Find contacts by name</p>
+        <input
+          className={css.input}
+          type="text"
+          value={this.state.filter}
+          onChange={this.handleInputChange}
+        />
+      </div>
     );
   }
 }
